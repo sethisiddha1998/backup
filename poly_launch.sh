@@ -1,0 +1,1 @@
+/home/mirza/.config/polybar/launch.sh
