@@ -1,0 +1,163 @@
+[
+// Auto-pair escaped curly brackets
+    { "keys": ["{"], "command": "insert_snippet", "args": {"contents": "{$0\\\\}"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\\\\$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^(\\s|\\)|]|\\}|\\\\|$)", "match_all": true },
+            { "key": "selector", "operand": "text.tex.latex", "match_all": true }
+        ]
+    },
+    { "keys": ["backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/User/Delete Left Right Twice.sublime-macro"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\\\\\\{$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^\\\\\\}", "match_all": true },
+            { "key": "selector", "operand": "text.tex.latex", "match_all": true }
+        ]
+    },
+    // Auto-pair escaped braces
+    { "keys": ["["], "command": "insert_snippet", "args": {"contents": "[$0\\\\]"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\\\\$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^(\\s|\\)|]|\\}|\\\\|$)", "match_all": true },
+            { "key": "selector", "operand": "text.tex.latex", "match_all": true }
+        ]
+    },
+    { "keys": ["backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/User/Delete Left Right Twice.sublime-macro"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\\\\\\[$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^\\\\\\]", "match_all": true },
+            { "key": "selector", "operand": "text.tex.latex", "match_all": true }
+        ]
+    },
+    // Auto-pair escaped parentheses
+    { "keys": ["("], "command": "insert_snippet", "args": {"contents": "($0\\\\)"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\\\\$", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^(\\s|\\)|]|\\}|\\\\|$)", "match_all": true },
+            { "key": "selector", "operand": "text.tex.latex", "match_all": true }
+        ]
+    },
+    { "keys": ["backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/User/Delete Left Right Twice.sublime-macro"}, "context":
+        [
+            { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+            { "key": "preceding_text", "operator": "regex_contains", "operand": "\\\\\\($", "match_all": true },
+            { "key": "following_text", "operator": "regex_contains", "operand": "^\\\\\\)", "match_all": true },
+            { "key": "selector", "operand": "text.tex.latex", "match_all": true }
+        ]
+    },
+
+    // Improve the usage of ^ and _ to create ^{} and _{}
+    {
+        "keys": ["^", "^"], "command": "insert_snippet", "args": {"contents": "^{${1:$SELECTION}}$0"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["^"], "command": "insert_snippet", "args": {"contents": "^{${1:$SELECTION}}$0"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" },
+            { "key": "selection_empty", "operator": "equal", "operand": false }
+        ]
+    },
+    {
+        "keys": ["_", "_"], "command": "insert_snippet", "args": {"contents": "_{${1:$SELECTION}}$0"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["_"], "command": "insert_snippet", "args": {"contents": "_{${1:$SELECTION}}$0"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" },
+            { "key": "selection_empty", "operator": "equal", "operand": false }
+        ]
+    },
+
+    // Use /, / to insert \frac and *, * to insert \cdot
+    {
+        "keys": ["/", "/"], "command": "insert_snippet", "args": {"contents": "\\frac{${1:n}}{${2:2}}"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+
+    {
+        "keys": ["*", "*"], "command": "insert", "args": {"characters": "\\cdot"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": [")", ")"], "command": "insert_snippet", "args": {"contents": "\\left($1\\right)"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["/", ")"], "command": "insert_snippet", "args": {"contents": "\\frac{\\left($1\\right)}{$2}"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["t", "x"], "command": "insert_snippet", "args": {"contents": "\\text{$1}"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["f", "x"], "command": "insert_snippet", "args": {"contents": "f\\left(${1:x}\\right)"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["c", "o", "s", "x"], "command": "insert_snippet", "args": {"contents": "\\cos\\left(${1:x}\\right)"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["s", "i", "n", "x"], "command": "insert_snippet", "args": {"contents": "\\sin\\left(${1:x}\\right)"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["t", "h", "e", "t", "a"], "command": "insert_snippet", "args": {"contents": "\\theta$1"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["c", "o", "s", "h"], "command": "insert_snippet", "args": {"contents": "\\cosh\\left(${1:x}\\right)"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["s", "i", "n", "h"], "command": "insert_snippet", "args": {"contents": "\\sinh\\left(${1:x}\\right)"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+    {
+        "keys": ["d", "v", "x"], "command": "insert_snippet", "args": {"contents": "\\frac{d${1:y}}{d${2:x}}"},
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "text.tex.latex meta.environment.math, text.tex.latex string.other.math" }
+        ]
+    },
+
+]

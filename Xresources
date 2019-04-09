@@ -1,0 +1,47 @@
+
+*.font:xft:Overpass Mono:size=10 
+
+Xft.dpi:                        96
+Xft.antialias:                  1
+Xft.autohint:                   1
+Xft.hinting:                    1
+Xft.hintstyle:                  hintslight
+Xft.lcdfilter:                  lcdlight
+Xft.rgba:                       rgb
+
+URxvt*termName:                 rxvt-256color
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+URxvt.internalBorder:           25 
+URxvt.perl-ext:	 		default,matcher
+URxvt.url-launcher:             firefox
+URxvt.matcher.button: 1
+
+
+URxvt*color0: #955D4A
+URxvt*color1: #7F6647
+URxvt*color2: #BF9A79
+URxvt*color3: #7d614b
+URxvt*color4: #94513f
+URxvt*color5: #a66e57
+URxvt*color6: #c78958
+URxvt*color7: #d99c65
+URxvt*color8: #f1c183
+URxvt*color9: #734128
+URxvt*color10: #dfaf93
+URxvt*color11: #b18270
+URxvt*color12: #cb9885
+URxvt*color13: #bd5e4a
+URxvt*color14: #845342
+URxvt*color15: #8A794E
+
+URxvt*background: #393532
+URxvt*foreground: #E3AD72
+
+
