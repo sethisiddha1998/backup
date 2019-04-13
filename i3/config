@@ -23,12 +23,6 @@ bindsym $mod+Control+Q kill
 bindsym $mod+d exec rofi -show run
 
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -36,7 +30,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 
-# alternatively, you can use the cursor keys:
+
 bindsym $mod+Control+Left move left
 bindsym $mod+Control+Down move down
 bindsym $mod+Control+Up move up
@@ -143,17 +137,24 @@ bindsym $mod+y floating enable resize set 1300 900
 bindsym $mod+Control+y floating disable
 
 bindsym --whole-window $mod+button2 kill
+bindsym $mod+l exec betterlockscreen -l dim -t "Mirza Baig"
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 gaps inner 10
 gaps outer 10
-smart_gaps on
 
 
-for_window [class="^URxvt$"]  floating enable resize set 600 600
+exec_always --no-startup-id "xset +fp ~/.fonts/misc/"       
+
+
+for_window [class="^URxvt$"]  floating enable resize set 500 400
 for_window [class="feh"] fullscreen
 focus_follows_mouse no
 for_window [class="^.*"] border pixel 0
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/vew.jpg
+exec_always --no-startup-id xbindkeys
+
+bindsym $mod+Tab workspace back_and_forth
