@@ -100,7 +100,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
-bindsym $mod+Control+c reload
+#bindsym $mod+Control+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+r restart
 # exit i3 (logs you out of your X session)
@@ -149,12 +149,18 @@ exec_always --no-startup-id "xset +fp ~/.fonts/misc/"
 
 
 for_window [class="^URxvt$"]  floating enable resize set 500 400
-for_window [class="feh"] fullscreen
+for_window [class="feh"] floating enable
 focus_follows_mouse no
 for_window [class="^.*"] border pixel 0
-exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/vew.jpg
 exec_always --no-startup-id xbindkeys
 
 bindsym $mod+Tab workspace back_and_forth
+
+
+bindsym $mod+Control+m exec --no-startup-id urxvt -name cmus -e cmus
+for_window [instance="cmus"] resize set 700 600
+for_window [instance="cmus"] move scratchpad
+bindsym $mod+m [instance="cmus"] scratchpad show
