@@ -161,6 +161,8 @@ bindsym $mod+Tab workspace back_and_forth
 
 
 bindsym $mod+Control+m exec --no-startup-id urxvt -name cmus -e cmus
-for_window [instance="cmus"] resize set 700 600
+for_window [instance="cmus"] resize set 700 450
+for_window [instance="ranger"] resize set 500 300
 for_window [instance="cmus"] move scratchpad
 bindsym $mod+m [instance="cmus"] scratchpad show
+
