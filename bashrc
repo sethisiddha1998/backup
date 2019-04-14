@@ -88,7 +88,7 @@ shopt -s histappend
 
 #
 # # ex - archive extractor
-# # usage: ex <file>
+# # usage: ex <file>bashrc kill current window alias
 ex ()
 {
   if [ -f $1 ] ; then
@@ -129,4 +129,4 @@ function lazygit() {
 
 # Aliases
 alias sc="import ss.png"
-alias ranger="urxvt -name ranger -e ranger"
+alias ranger="urxvt -name ranger -e ranger & exit"
